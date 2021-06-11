@@ -1,9 +1,16 @@
 import './App.css';
+import SidebarLeft from './components/SidebarLeft';
+import SidebarRight from './components/SidebarRight';
 
 function App() {
   return (
     <div className="app">
-      <h1>Hello world</h1>
+      
+      {/* SidebarLeft component */}
+      <SidebarLeft/>
+      
+      {/* SidebarRight component */}
+      <SidebarRight/>
     </div>
   );
 }

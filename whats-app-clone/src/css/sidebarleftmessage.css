@@ -1,0 +1,18 @@
+.sidebar-left-message{
+    display: flex;
+    height: 80px;
+    width: 100%;
+    align-items: center;
+}
+.sidebar-left-message:hover{
+    background-color: #535751;
+}
+.sidebar-left-message-msg{
+    flex: 2;
+}
+.sidebar-left-message-img{
+    flex: 0.6;
+}
+.sidebar-left-message-time{
+    margin-right: 4px;
+}

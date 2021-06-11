@@ -1,0 +1,30 @@
+.sidebar-left-header{
+    display: flex;
+    height: 70px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #535751;
+}
+.sidebar-left-header-img-container{
+    align-self: flex-start;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    flex: 1;
+}
+.sidebar-left-header-img{
+    margin-left: 15px;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+}
+.sidebar-left-header-icons-container{
+    display: flex;
+    justify-content: flex-end;
+    flex: 2;
+}
+.icons{
+    margin-left: 10px;
+    margin-right: 10px;
+    color: #d9ded7;
+}

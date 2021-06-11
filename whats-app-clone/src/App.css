@@ -1,3 +1,7 @@
-
+.app{
+  display: grid;
+  grid-template-columns: repeat(5, 20%);
+  background-color: #1c1d1f;
+}
 
 

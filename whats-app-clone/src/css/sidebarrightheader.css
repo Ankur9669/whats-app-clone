@@ -1,0 +1,13 @@
+.sidebar-right-header{
+    display: flex;
+    height: 70px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #535751;
+}
+.sidebar-right-header-img{
+    margin-left: 15px;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+}

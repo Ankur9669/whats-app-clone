@@ -1,0 +1,6 @@
+.sidebar-left{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    height: 100vh;
+    margin-right: 2px;
+}
