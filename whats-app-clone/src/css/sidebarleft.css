@@ -4,3 +4,23 @@
     height: 100vh;
     margin-right: 2px;
 }
+.sidebar-left-message-container{
+    overflow: scroll;
+    height: 100vh;
+}
+@media only screen and (max-width: 700px){
+    .sidebar-left{
+    grid-column-start: 2;
+    grid-column-end: 5;
+    height: 100vh;
+    margin-right: 2px;
+    }
+}
+@media only screen and (max-width: 500px){
+    .sidebar-left{
+    grid-column-start: 1;
+    grid-column-end: 6;
+    height: 100vh;
+    margin-right: 2px;
+    }
+}

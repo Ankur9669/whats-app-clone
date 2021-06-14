@@ -1,5 +1,7 @@
 import React from 'react'
 import "../css/sidebarright.css"
+import SidebarRightChat from './SidebarRightChat'
+import SidebarRightFooter from './SidebarRightFooter'
 import SidebarRightHeader from './SidebarRightHeader'
 function SidebarRight() {
     return (
@@ -7,6 +9,10 @@ function SidebarRight() {
 
             {/* SidebarRight Header */}
             <SidebarRightHeader/>
+
+            <SidebarRightChat/>
+
+            <SidebarRightFooter/>
         </div>
     )
 }

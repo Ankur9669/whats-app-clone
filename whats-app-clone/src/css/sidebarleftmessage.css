@@ -3,16 +3,18 @@
     height: 80px;
     width: 100%;
     align-items: center;
+    cursor: pointer;
 }
 .sidebar-left-message:hover{
     background-color: #535751;
 }
 .sidebar-left-message-msg{
-    flex: 2;
+    margin-left: 12px;
 }
-.sidebar-left-message-img{
-    flex: 0.6;
-}
+
 .sidebar-left-message-time{
-    margin-right: 4px;
+    margin-right: 14px;
+    display: flex;
+    justify-content: flex-end;
+    flex: 3;
 }

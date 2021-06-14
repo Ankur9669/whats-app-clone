@@ -1,0 +1,58 @@
+.sidebar-right-chat{
+    height: 80vh;
+    background-image: url("https://images.unsplash.com/photo-1478728073286-db190d3d8ce6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80");
+    background-repeat: repeat;
+    background-position: center;
+    opacity: 0.7;
+    overflow:scroll;
+    overflow-x:hidden
+}
+
+.chat-msg-received{
+    color: white;
+    max-width: 75%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: gray;
+    width: fit-content;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.chat-msg-sent{
+    max-width: 75%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: auto;
+    margin-right: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #2fc73e;
+    width: fit-content;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+.chat-sender-name{
+    color: blue;
+    font-weight: 800;
+    font-size: small;
+}
+.chat-msg{
+    color: white;
+    word-break: break-all;
+    font-weight: 600;
+}
+.chat-date-time{
+    color: white;
+}

@@ -10,21 +10,16 @@ function SidebarLeft() {
             {/* Sidebarleftheader*/}
             <SidebarLeftHeader/>
 
-            {/* Sidebarleftsearchbar*/}
-            <SidebarleftSearchBar/>
-            <hr style = {{opacity:"0.1"}}/>
-
-            {/* Sidebarleftmessages*/}
+            <div className = "sidebar-left-message-container">
+                {/* Sidebarleftmessages*/}
             <SidebarLeftMessage/>
             <hr style = {{opacity:"0.1"}}/>
             <SidebarLeftMessage/>
             <hr style = {{opacity:"0.1"}}/>
             <SidebarLeftMessage/>
             <hr style = {{opacity:"0.1"}}/>
-            <SidebarLeftMessage/>
-            <hr style = {{opacity:"0.1"}}/>
-            <SidebarLeftMessage/>
-            <hr style = {{opacity:"0.1"}}/>
+            </div>
+            
         </div>
     )
 }

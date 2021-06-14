@@ -1,0 +1,33 @@
+.sidebar-right-footer{
+    display: flex;
+    height: 10vh;
+    align-items: center;
+}
+.icons{
+    margin-left: 4px;
+    color: #7c8f7e;
+}
+.chat-bar{
+    flex: 1;
+    margin-left: 4px;
+    margin-right: 4px;
+    height: 30px;
+    padding-left: 14px;
+    padding-right: 14px;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    border-top-right-radius: 1rem;
+    background-color: #7c8f7e;
+    color: white;
+    border-width: 0px;
+    border-style: inset;
+    border-color: none;
+    
+}
+.chat-bar:focus-visible{
+    outline: none;
+}
+::placeholder{
+    color:white;
+}

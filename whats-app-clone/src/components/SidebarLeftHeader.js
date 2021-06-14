@@ -4,9 +4,12 @@ import PhoneIcon from '@material-ui/icons/Phone';
 import MessageIcon from '@material-ui/icons/Message';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import IconButton from '@material-ui/core/IconButton';
+import SearchIcon from '@material-ui/icons/Search';
+import "../css/sidebarleftsearchbar.css";
 
 function SidebarLeftHeader() {
     return (
+        <div className = "sidebar-left-header-container">
         <div className = "sidebar-left-header">
             <div className = "sidebar-left-header-img-container">
                 <img
@@ -30,6 +33,13 @@ function SidebarLeftHeader() {
                 </IconButton>
             </div>
         </div>
+        <div className = "sidebar-left-search-bar-container">
+            <SearchIcon className = "sidebar-left-search-bar-icon"/>
+            <textarea
+            className = "sidebar-left-search-bar" 
+            placeholder = "Search Or Start A New Chat"></textarea>
+        </div>
+    </div>
     )
 }
 

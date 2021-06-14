@@ -2,6 +2,15 @@
   display: grid;
   grid-template-columns: repeat(5, 20%);
   background-color: #1c1d1f;
+  max-width: 1300px;
+  margin: auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+@media only screen and (max-width: 700px){
+  .app{
+    display: grid;
+  }
 }
 
 
