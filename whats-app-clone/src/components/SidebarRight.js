@@ -3,14 +3,14 @@ import "../css/sidebarright.css"
 import SidebarRightChat from './SidebarRightChat'
 import SidebarRightFooter from './SidebarRightFooter'
 import SidebarRightHeader from './SidebarRightHeader'
-function SidebarRight() {
+function SidebarRight(props) {
     return (
         <div className = "sidebar-right">
 
             {/* SidebarRight Header */}
             <SidebarRightHeader/>
 
-            <SidebarRightChat/>
+            <SidebarRightChat messages = {props.messages}/>
 
             <SidebarRightFooter/>
         </div>
