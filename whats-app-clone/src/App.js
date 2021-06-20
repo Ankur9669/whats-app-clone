@@ -4,10 +4,12 @@ import SidebarRight from './components/SidebarRight';
 import {useEffect, useState} from "react";
 import Pusher from 'pusher-js';
 import axios from "./axios";
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 
 function App() {
 
   const [messages, setMessages] = useState([]);
+  const [width, setWidth] = useState(window.innerWidth);
 
   //This will fetch all the previous messages.
   useEffect(() => 
@@ -22,7 +24,9 @@ function App() {
         else{
           alert("Some Error in fetching");
         }
-    })  
+    });
+    
+    window.addEventListener("resize", handleResize);
   }, [])
 
   //This would fetch the latest message
@@ -48,8 +52,15 @@ function App() {
     }
   }, [messages]);
 
+  //This is a function which is handling resizing of the screen
+  function handleResize()
+  {
+    setWidth(window.innerWidth);
+  }
 
-  return (
+ // if screen width is less than 700px the display like this
+  return width > 700 ? 
+  (
     <div className="app">
       
       {/* SidebarLeft component */}
@@ -58,7 +69,26 @@ function App() {
       {/* SidebarRight component */}
       <SidebarRight messages = {messages}/>
     </div>
-  );
+  ) :
+  (
+    <div className="app">
+      
+      <Router>
+          <Switch>
+            <Route path = "/chat">
+                <SidebarRight messages = {messages}/>    
+            </Route>
+
+              <Route path = "/">
+                {/* SidebarLeft component */}
+                <SidebarLeft/>
+              </Route>
+          </Switch>
+        
+      
+      </Router>
+    </div>
+  )
 }
 
 export default App;

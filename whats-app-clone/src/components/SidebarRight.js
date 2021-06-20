@@ -3,7 +3,11 @@ import "../css/sidebarright.css"
 import SidebarRightChat from './SidebarRightChat'
 import SidebarRightFooter from './SidebarRightFooter'
 import SidebarRightHeader from './SidebarRightHeader'
-function SidebarRight(props) {
+
+
+function SidebarRight(props)
+{
+   
     return (
         <div className = "sidebar-right">
 

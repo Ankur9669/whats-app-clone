@@ -1,8 +1,24 @@
 import React from 'react';
 import "../css/sidebarleftmessage.css";
-function SidebarLeftMessage() {
+import {useHistory} from "react-router-dom";
+import {useState} from "react";
+
+function SidebarLeftMessage() 
+{
+    const history = useHistory();
+    const [width, setWidth] = useState(window.innerWidth);
+
+    function handleClick()
+    {
+        if(width < 700)
+        {
+            history.push("/chat");
+        }
+    }
+
+    
     return (
-        <div className = "sidebar-left-message">
+        <div className = "sidebar-left-message" onClick = {handleClick}>
             <div className = "sidebar-left-message-img">
                 <img
                     className = "sidebar-left-header-img" 

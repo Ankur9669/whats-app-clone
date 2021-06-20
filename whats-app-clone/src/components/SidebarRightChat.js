@@ -1,10 +1,25 @@
 import React from 'react'
 import "../css/sidebarrightchat.css";
-function SidebarRightChat(props) {
+import {useEffect, useRef} from "react";
+
+function SidebarRightChat(props) 
+{
+    //Ref for scrolling to bottom
+    const messageRef = useRef();
+
+    useEffect(() => {
+
+        //Whenever new message would come the container would scroll to bottom
+        if(messageRef)
+        {
+            //console.log(messageRef.current.scrollHeight);
+            messageRef.current.scrollTop = messageRef.current.scrollHeight;
+        }     
+    }, [props.messages]);
+
+   
     return (
-        
-        <div className = "sidebar-right-chat">
-            {console.log(props.messages)}
+        <div className = "sidebar-right-chat" ref = {messageRef}>
             {
                 props.messages.map(message =>
                 {
@@ -19,9 +34,10 @@ function SidebarRightChat(props) {
                         <span className = "chat-date-time">
                             <p>{message?.timestamp}</p>
                         </span>
+                        
                     </div>)
                 })
-            }
+            }           
         </div>
     )
 }

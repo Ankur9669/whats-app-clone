@@ -20,8 +20,8 @@ function SidebarRightFooter()
                 timestamp: new Date().toUTCString(),
                 received: false
             });
-        }
-        
+            setMessage("");
+        } 
     }
 
     //If enter button is pressed than send msg
@@ -43,7 +43,8 @@ function SidebarRightFooter()
             className = "chat-bar" 
             placeholder = "Send chat"
             onChange = {(e) => setMessage(e.target.value)}
-            onKeyPress = {handleKeyPress}>
+            onKeyPress = {handleKeyPress}
+            value = {message}>
             </input>
             <IconButton onClick = {sendMessage}>
                 <SendIcon className = "icons"/>
