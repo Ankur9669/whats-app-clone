@@ -14,7 +14,7 @@ function App() {
   //This will fetch all the previous messages.
   useEffect(() => 
   {
-    axios.get("/v1/messages")
+    axios.get("/v3/messages/60cee248d5513403805c8d11")
     .then((response) => 
     {
         if(response)
@@ -39,7 +39,7 @@ function App() {
       cluster: 'ap2'
     });
 
-    var channel = pusher.subscribe('messages');
+    var channel = pusher.subscribe('rooms');
     channel.bind('inserted', 
     function(message) 
     {

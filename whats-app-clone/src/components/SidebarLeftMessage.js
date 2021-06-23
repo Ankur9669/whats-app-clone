@@ -12,6 +12,7 @@ function SidebarLeftMessage()
     {
         if(width < 700)
         {
+            console.log("YEs here");
             history.push("/chat");
         }
     }

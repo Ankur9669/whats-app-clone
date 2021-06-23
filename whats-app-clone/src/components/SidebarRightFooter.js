@@ -14,12 +14,14 @@ function SidebarRightFooter()
         //If msg is empty dont send anything
         if(message.length > 0)
         {
-            axios.post("/v1/messages", {
+            axios.post("/v3/messages/60cee248d5513403805c8d11", {
                 message: message,
                 name: "Ankur",
                 timestamp: new Date().toUTCString(),
                 received: false
             });
+
+            //After sending the msg empty the msg og input field
             setMessage("");
         } 
     }
