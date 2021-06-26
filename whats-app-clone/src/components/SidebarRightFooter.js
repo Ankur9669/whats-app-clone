@@ -5,15 +5,16 @@ import SendIcon from '@material-ui/icons/Send';
 import IconButton from '@material-ui/core/IconButton';
 import axios from "../axios";
 import { useStateValue } from '../StateProvider';
-
+import Picker from 'emoji-picker-react';
+import CloseIcon from '@material-ui/icons/Close';
 function SidebarRightFooter() 
 {
     const [message, setMessage] = useState("");
     const [state, dispatch] = useStateValue();
+    const [emojiPicker, setEmojiPicker] = useState(false);
+
     function sendMessage()
     {
-        //console.log(message);
-
         //If msg is empty dont send anything
         if(message.length > 0)
         {
@@ -27,6 +28,7 @@ function SidebarRightFooter()
 
             //After sending the msg empty the msg og input field
             setMessage("");
+            setEmojiPicker(!emojiPicker)
         } 
     }
 
@@ -39,9 +41,28 @@ function SidebarRightFooter()
         }
     }
 
+    //When user selects the emoji we append it to the message
+    const onEmojiClick = (event, emojiObject) =>
+    {
+        setMessage(message + emojiObject.emoji);
+    };
+
     return (
+        <>
+        {/*We only show emojipicker container when user clicks emojiicon*/}
+        {emojiPicker && 
+        <div className = "emoji-picker-container">
+            <CloseIcon style = {{color: "white", cursor: "pointer"}}
+            fontSize = "large"
+            onClick = {() => setEmojiPicker(!emojiPicker)}>
+
+            </CloseIcon>
+
+            <Picker onEmojiClick = {onEmojiClick}></Picker>
+        </div>
+        } 
         <div className = "sidebar-right-footer">
-            <IconButton>
+            <IconButton onClick = {() => setEmojiPicker(!emojiPicker)}>
                 <EmojiEmotionsOutlinedIcon className = "icons"/>
             </IconButton>
             
@@ -56,6 +77,7 @@ function SidebarRightFooter()
                 <SendIcon className = "icons"/>
             </IconButton>  
         </div>
+        </>
     )
 }
 
