@@ -4,17 +4,21 @@ import EmojiEmotionsOutlinedIcon from '@material-ui/icons/EmojiEmotionsOutlined'
 import SendIcon from '@material-ui/icons/Send';
 import IconButton from '@material-ui/core/IconButton';
 import axios from "../axios";
+import { useStateValue } from '../StateProvider';
+
 function SidebarRightFooter() 
 {
     const [message, setMessage] = useState("");
+    const [state, dispatch] = useStateValue();
     function sendMessage()
     {
-        console.log(message);
+        //console.log(message);
 
         //If msg is empty dont send anything
         if(message.length > 0)
         {
-            axios.post("/v3/messages/60cee248d5513403805c8d11", {
+            axios.post("/v3/messages/" + state?.roomId, {
+                roomId: state?.roomId,
                 message: message,
                 name: "Ankur",
                 timestamp: new Date().toUTCString(),

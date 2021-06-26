@@ -14,43 +14,47 @@ function App() {
   //This will fetch all the previous messages.
   useEffect(() => 
   {
-    axios.get("/v3/messages/60cee248d5513403805c8d11")
-    .then((response) => 
-    {
-        if(response)
-        {
-          setMessages(response.data);
-        }
-        else{
-          alert("Some Error in fetching");
-        }
-    });
+    // axios.get("/v3/messages/60d482e49caa933cb0c6dcf8")
+    // .then((response) => 
+    // {
+    //     if(response)
+    //     {
+    //       setMessages(response.data);
+    //     }
+    //     else{
+    //       alert("Some Error in fetching");
+    //     }
+    // });
     
     window.addEventListener("resize", handleResize);
   }, [])
 
-  //This would fetch the latest message
-  useEffect(() => {
+  // //This would fetch the latest message
+  // useEffect(() => {
 
-    //Pusher is for making mongodb realtime that is as soon as something would 
-    //change it pusher would inform react about that.
-    var pusher = new Pusher('4cee5d7aff5e3596cb6c', 
-    {
-      cluster: 'ap2'
-    });
+  //   //Pusher is for making mongodb realtime that is as soon as something would 
+  //   //change it pusher would inform react about that.
+  //   var pusher = new Pusher('4cee5d7aff5e3596cb6c', 
+  //   {
+  //     cluster: 'ap2'
+  //   });
 
-    var channel = pusher.subscribe('rooms');
-    channel.bind('inserted', 
-    function(message) 
-    {
-      setMessages([...messages, message]);
-    });  
+  //   var channel = pusher.subscribe('rooms');
+  //   channel.bind('inserted', 
+  //   function(message) 
+  //   {
+  //     console.log(message);
+  //     if(message.roomId === "60d482e49caa933cb0c6dcf8")
+  //     {
+  //       setMessages([...messages, message]);
+  //     }
+  //   });  
     
-    return () => {
-      pusher.unsubscribe();
-      channel.unbind_all();
-    }
-  }, [messages]);
+  //   return () => {
+  //     pusher.unsubscribe();
+  //     channel.unbind_all();
+  //   }
+  // }, [messages]);
 
   //This is a function which is handling resizing of the screen
   function handleResize()

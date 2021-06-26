@@ -14,7 +14,7 @@ function SidebarRight(props)
             {/* SidebarRight Header */}
             <SidebarRightHeader/>
 
-            <SidebarRightChat messages = {props.messages}/>
+            <SidebarRightChat/>
 
             <SidebarRightFooter/>
         </div>
