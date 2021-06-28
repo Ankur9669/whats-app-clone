@@ -35,9 +35,10 @@ function SidebarLeftHeader() {
         </div>
         <div className = "sidebar-left-search-bar-container">
             <SearchIcon className = "sidebar-left-search-bar-icon"/>
-            <textarea
-            className = "sidebar-left-search-bar" 
-            placeholder = "Search Or Start A New Chat"></textarea>
+            <input
+                className = "sidebar-left-search-bar" 
+                placeholder = "Search Or Start A New Chat"> 
+            </input>
         </div>
     </div>
     )

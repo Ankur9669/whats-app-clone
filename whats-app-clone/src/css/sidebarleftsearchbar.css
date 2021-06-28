@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: center;
     color: white;
-    background-color: #535751;
+    background-color: rgb(42, 47, 50);;
     border-radius: 20px;
     margin-top: 10px;
     margin-left: 10px;
@@ -12,9 +12,9 @@
     margin-bottom: 10px;
 }
 .sidebar-left-search-bar{
-    background-color: #535751;
-    font-weight: 800;
     color: white;
+    background-color: rgb(42, 47, 50);;
+    font-weight: 300;
     margin-top: 5px;
     width: 80%;
     border: none;
@@ -23,7 +23,4 @@
 }
 .sidebar-left-search-bar:focus-visible{
     outline: none;
-}
-.sidebar-left-search-bar-icon{
-    margin-left: 12px;
 }

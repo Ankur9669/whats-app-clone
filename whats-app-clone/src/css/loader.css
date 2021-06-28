@@ -1,0 +1,63 @@
+.loader {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background: #090F13;
+}
+
+.whats-app-icon {
+    z-index: 3;
+    fill: rgb(191, 191, 191);
+    width: 60px;
+    height: 60px;
+    animation: glisten 2s ease-in 0.8s infinite;
+}
+
+.loader-progress {
+    width: 200px;
+    max-width: 400px;
+    height: 4px;
+    width: 90%;
+    margin: 20px auto 30px;
+    background: rgb(230, 230, 230);
+    position: relative;
+}
+
+.loader-progress::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    background: rgb(0, 216.5, 187.0288);
+    width: 50%;
+    animation: loader 2s ease-in 1s infinite;
+}
+
+.loader-progress--done::after {
+    width: 100%;
+}
+
+.loader-msg {
+    color: rgba(241, 241, 242, 0.45)
+}
+
+@keyframes loader {
+    from {
+        transform: translateX(0px);
+    }
+
+    to {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes glisten {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-360deg);
+    }
+}

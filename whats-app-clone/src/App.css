@@ -1,7 +1,7 @@
 .app{
   display: grid;
   grid-template-columns: repeat(5, 20%);
-  background-color: #1c1d1f;
+  background-color: rgb(19, 28, 33);;
   max-width: 1300px;
   margin: auto;
   margin-top: 1rem;

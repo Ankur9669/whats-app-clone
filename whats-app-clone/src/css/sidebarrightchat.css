@@ -18,7 +18,7 @@
     padding-right: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
-    background-color: gray;
+    background: rgb(38, 45, 49);;
     width: fit-content;
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
@@ -36,7 +36,7 @@
     padding-right: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
-    background-color: #2fc73e;
+    background: rgb(5, 97, 98);
     width: fit-content;
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
@@ -44,7 +44,7 @@
     border-bottom-right-radius: 12px;
 }
 .chat-sender-name{
-    color: blue;
+    color: yellow;
     font-weight: 800;
     font-size: small;
 }

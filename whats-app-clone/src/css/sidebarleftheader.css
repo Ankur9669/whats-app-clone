@@ -7,7 +7,7 @@
     height: 70px;
     align-items: center;
     justify-content: space-between;
-    background-color: #535751;
+    background-color: rgb(42, 47, 50);
 }
 .sidebar-left-header-img-container{
     align-self: flex-start;
@@ -30,5 +30,5 @@
 .icons{
     margin-left: 10px;
     margin-right: 10px;
-    color: #d9ded7;
+    color: rgb(145, 145, 145);
 }

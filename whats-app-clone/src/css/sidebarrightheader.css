@@ -4,7 +4,7 @@
     display: flex;
     height: 70px;
     align-items: center;
-    background-color: #535751;
+    background-color: rgb(42, 47, 50);
 }
 .sidebar-right-header-img{
     margin-left: 15px;

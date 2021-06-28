@@ -2,59 +2,27 @@ import './App.css';
 import SidebarLeft from './components/SidebarLeft';
 import SidebarRight from './components/SidebarRight';
 import {useEffect, useState} from "react";
-import Pusher from 'pusher-js';
-import axios from "./axios";
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import Loader from './components/Loader';
 
 function App() {
 
+  const [apploaded, setAppLoaded] = useState(false);
   const [messages, setMessages] = useState([]);
   const [width, setWidth] = useState(window.innerWidth);
 
   //This will fetch all the previous messages.
   useEffect(() => 
   {
-    // axios.get("/v3/messages/60d482e49caa933cb0c6dcf8")
-    // .then((response) => 
-    // {
-    //     if(response)
-    //     {
-    //       setMessages(response.data);
-    //     }
-    //     else{
-    //       alert("Some Error in fetching");
-    //     }
-    // });
-    
+    //After the delay of 3 sec we would remove the loading screen
+    setTimeout(() => {
+      setAppLoaded(true);
+    }, 3000);
+
+
     window.addEventListener("resize", handleResize);
   }, [])
 
-  // //This would fetch the latest message
-  // useEffect(() => {
-
-  //   //Pusher is for making mongodb realtime that is as soon as something would 
-  //   //change it pusher would inform react about that.
-  //   var pusher = new Pusher('4cee5d7aff5e3596cb6c', 
-  //   {
-  //     cluster: 'ap2'
-  //   });
-
-  //   var channel = pusher.subscribe('rooms');
-  //   channel.bind('inserted', 
-  //   function(message) 
-  //   {
-  //     console.log(message);
-  //     if(message.roomId === "60d482e49caa933cb0c6dcf8")
-  //     {
-  //       setMessages([...messages, message]);
-  //     }
-  //   });  
-    
-  //   return () => {
-  //     pusher.unsubscribe();
-  //     channel.unbind_all();
-  //   }
-  // }, [messages]);
 
   //This is a function which is handling resizing of the screen
   function handleResize()
@@ -62,7 +30,12 @@ function App() {
     setWidth(window.innerWidth);
   }
 
- // if screen width is less than 700px the display like this
+  if(!apploaded)
+  {
+    return (<Loader></Loader>)
+  }
+  else{
+    // if screen width is less than 700px the display like this
   return width > 700 ? 
   (
     <div className="app">
@@ -76,23 +49,20 @@ function App() {
   ) :
   (
     <div className="app">
-      
       <Router>
           <Switch>
             <Route path = "/chat">
                 <SidebarRight messages = {messages}/>    
             </Route>
 
-              <Route path = "/">
-                {/* SidebarLeft component */}
-                <SidebarLeft/>
-              </Route>
-          </Switch>
-        
-      
+            <Route path = "/">
+              {/* SidebarLeft component */}
+              <SidebarLeft/>
+            </Route>
+          </Switch>     
       </Router>
     </div>
   )
+  }
 }
-
 export default App;
