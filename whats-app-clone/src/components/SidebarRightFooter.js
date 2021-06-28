@@ -28,7 +28,7 @@ function SidebarRightFooter()
 
             //After sending the msg empty the msg og input field
             setMessage("");
-            setEmojiPicker(!emojiPicker)
+            setEmojiPicker(false);
         } 
     }
 
